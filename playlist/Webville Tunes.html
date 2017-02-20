@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Webville Tunes</title>
+<script src="playlist_store.js"></script>
+<script type="text/javascript">
+	window.onload = init;
+	function init(){		
+		var button = document.getElementById('addButton');
+		button.onclick = handleButtonClick;
+		loadPlaylist(); //加载页面时从localStorage加载已储存的歌曲
+	}
+	function handleButtonClick() {
+		var textInput = document.getElementById('songTextInput');
+		var songName = textInput.value;
+// 弹框-歌曲名 添加歌曲
+		if (songName=='') {
+			alert('Please enter a song!');
+		}
+		else{
+			var li = document.createElement('li');
+			li.innerHTML = songName;
+			var ul = document.getElementById('playlist');
+			ul.appendChild(li);
+			save(songName); //每次向播放列表添加一首歌时，都会保存
+		}
+
+		
+
+	}
+</script>
+</head>
+
+<body>
+<form>
+	<input type="text" name="" id="songTextInput" size="40" placeholder="Song name">
+	<input type="button" name="" id="addButton" value="Add Song">
+</form>
+<ul id="playlist">
+	
+</ul>
+</body>
+</html>

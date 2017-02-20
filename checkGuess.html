@@ -1,0 +1,33 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>checkGuess</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+	var guessInput = document.getElementById('guess');
+	var guess = guessInput.value;
+	var answer = checkGuess(guess);
+	alert(answer);
+
+	function checkGuess(guess) {
+		var answers = ['red','green','blue'];
+		var index = Math.floor(Math.random()*answers.length);
+
+		if (guess == answers[index]) {
+			answer = "You're right!I was thinking of" + answers[index];
+		} else {
+			answer = "Sorry,I was thinking of" + answers[index]
+		}
+		return answer;
+	}
+	
+</script>
+</head>
+
+<body>
+	<input type="text" name="" id="guess" value="1">
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function showTemps(){
+            var tempByHours = new Array();
+            tempByHours[0] = 59.2;
+            tempByHours[1] = 60.1;
+            tempByHours[2] = 63;
+            tempByHours[3] = 65;
+            tempByHours[4] = 62;
+            for (var i = 0; i < tempByHours.length; i ++){
+                var theTemp = tempByHours[i];
+                var id = "temp" + i;//********注意完全匹配
+                var li = document.getElementById(id);
+                if (i==0){
+                    li.innerHTML = "The Temperature at noon was " + i +" was" +theTemp; 
+                }else{
+                    li.innerHTML = "The Temperature at " + i + "was " + theTemp;
+                }
+            }
+        }
+        window.onload = showTemps;//script写在body最下面时不用写此句
+    </script>
+</head>
+<body>
+    <h1>Temperatures</h1>
+    <ul id="playlist">
+        <li id="temp0"></li>
+        <li id="temp1"></li>
+        <li id="temp2"></li>
+        <li id="temp3"></li>        
+        <li id="temp4"></li>        
+    </ul>
+</body>
+</html>
